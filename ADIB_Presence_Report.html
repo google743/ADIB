@@ -1,12 +1,13 @@
+Adib presence report · HTML
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تقرير ميداني | مصرف أبو ظبي الإسلامي</title>
+<title>تقرير ميداني | مصرف ابو ظبي الاسلامي</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   :root {
     --navy: #0D2137;
     --navy-mid: #1E3A5F;
@@ -19,7 +20,7 @@
     --text-muted: #8896A8;
     --ice: #CADCF0;
   }
-
+ 
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #000;
@@ -28,14 +29,14 @@
     height: 100vh;
     direction: rtl;
   }
-
+ 
   .presentation {
     width: 100vw;
     height: 100vh;
     position: relative;
     overflow: hidden;
   }
-
+ 
   .slide {
     position: absolute;
     inset: 0;
@@ -51,18 +52,18 @@
     pointer-events: none;
     overflow: hidden;
   }
-
+ 
   .slide.active {
     opacity: 1;
     transform: translateX(0);
     pointer-events: all;
   }
-
+ 
   .slide.exit {
     opacity: 0;
     transform: translateX(40px);
   }
-
+ 
   /* ========= NAVIGATION ========= */
   .nav {
     position: fixed;
@@ -79,7 +80,7 @@
     border: 1px solid rgba(201,164,74,0.3);
     backdrop-filter: blur(8px);
   }
-
+ 
   .nav button {
     background: none;
     border: none;
@@ -93,7 +94,7 @@
   }
   .nav button:hover { background: rgba(201,164,74,0.15); }
   .nav button:disabled { color: #3A4A5A; cursor: default; }
-
+ 
   .nav .dots { display: flex; gap: 8px; align-items: center; }
   .nav .dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -102,7 +103,7 @@
     cursor: pointer;
   }
   .nav .dot.active { background: var(--gold); width: 22px; border-radius: 4px; }
-
+ 
   .slide-counter {
     color: var(--text-muted);
     font-size: 12px;
@@ -110,8 +111,7 @@
     text-align: center;
     font-family: Arial;
   }
-
-  /* Fullscreen hint */
+ 
   .hint {
     position: fixed;
     top: 16px;
@@ -122,26 +122,25 @@
     font-family: Arial;
     letter-spacing: 0.5px;
   }
-
+ 
   /* ========= SLIDE 1: COVER ========= */
   .s1 { background: var(--navy); }
-
+ 
   .s1 .top-bar {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 6px;
     background: var(--gold);
   }
-
+ 
   .s1 .headline {
     margin-top: 14%;
     color: var(--white);
     font-size: clamp(28px, 4vw, 52px);
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.5px;
   }
-
+ 
   .s1 .headline-gold {
     color: var(--gold);
     font-size: clamp(38px, 5.5vw, 72px);
@@ -149,7 +148,7 @@
     margin-top: 0.15em;
     display: block;
   }
-
+ 
   .s1 .divider {
     width: 200px;
     height: 3px;
@@ -157,31 +156,29 @@
     margin: 6% 0 3% auto;
     border-radius: 2px;
   }
-
+ 
   .s1 .subtitle {
     color: var(--ice);
     font-size: clamp(13px, 1.5vw, 18px);
-    font-weight: 400;
   }
-
+ 
   .s1 .date {
     color: var(--text-muted);
     font-size: clamp(11px, 1.2vw, 14px);
     margin-top: 8px;
   }
-
+ 
   /* ========= SLIDE 2: QUESTION ========= */
   .s2 { background: var(--light-bg); }
-
+ 
   .s2 .eyebrow {
     color: var(--gold);
     font-size: clamp(11px, 1.2vw, 14px);
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 5%;
   }
-
+ 
   .s2 .big-q {
     color: var(--navy);
     font-size: clamp(30px, 4.5vw, 60px);
@@ -192,7 +189,7 @@
     flex-direction: column;
     justify-content: center;
   }
-
+ 
   .s2 .quote-box {
     background: #E8EDF5;
     border: 1px solid #CBD5E1;
@@ -203,10 +200,10 @@
     font-style: italic;
     margin-top: auto;
   }
-
+ 
   /* ========= SLIDE 3: WHAT CUSTOMER SEES ========= */
   .s3 { background: var(--white); }
-
+ 
   .s3 .slide-title {
     color: var(--navy);
     font-size: clamp(22px, 2.8vw, 38px);
@@ -215,7 +212,7 @@
     padding-bottom: 2%;
     border-bottom: 2px solid #E2E8F0;
   }
-
+ 
   .s3 .cards-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,7 +220,7 @@
     flex: 1;
     margin-top: 2%;
   }
-
+ 
   .card-bad, .card-good {
     border-radius: 12px;
     padding: 6% 7%;
@@ -231,32 +228,32 @@
     flex-direction: column;
     gap: 12px;
   }
-
+ 
   .card-bad {
     background: #FEF2F2;
     border: 1px solid #FCA5A5;
   }
-
+ 
   .card-good {
     background: #F0FDF4;
     border: 1px solid #86EFAC;
   }
-
+ 
   .card-label {
     font-size: clamp(14px, 1.6vw, 19px);
     font-weight: 800;
     text-align: center;
   }
-
+ 
   .card-bad .card-label { color: #DC2626; }
   .card-good .card-label { color: #16A34A; }
-
+ 
   .card-row {
     padding: 8px 0;
     border-bottom: 1px solid rgba(0,0,0,0.07);
   }
   .card-row:last-child { border-bottom: none; }
-
+ 
   .card-row .query {
     font-size: clamp(10px, 1.1vw, 13px);
     font-weight: 700;
@@ -270,12 +267,12 @@
     display: inline-block;
     margin-bottom: 4px;
   }
-
+ 
   .card-row .result {
     font-size: clamp(11px, 1.2vw, 14px);
     color: #4B5563;
   }
-
+ 
   .card-good ul {
     list-style: none;
     display: flex;
@@ -283,14 +280,14 @@
     gap: 10px;
     margin-top: 4px;
   }
-
+ 
   .card-good ul li {
     font-size: clamp(11px, 1.2vw, 14px);
     color: #374151;
     padding-right: 20px;
     position: relative;
   }
-
+ 
   .card-good ul li::before {
     content: "✓";
     position: absolute;
@@ -298,10 +295,10 @@
     color: #16A34A;
     font-weight: 700;
   }
-
+ 
   /* ========= SLIDE 4: FIELD DATA ========= */
   .s4 { background: var(--navy); }
-
+ 
   .s4 .eyebrow {
     color: var(--gold);
     font-size: clamp(11px, 1.1vw, 13px);
@@ -309,21 +306,21 @@
     letter-spacing: 2px;
     margin-bottom: 8px;
   }
-
+ 
   .s4 .slide-title {
     color: var(--white);
     font-size: clamp(22px, 2.8vw, 38px);
     font-weight: 800;
     margin-bottom: 6%;
   }
-
+ 
   .s4 .stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3%;
     flex: 1;
   }
-
+ 
   .stat-card {
     background: var(--navy-card);
     border: 1px solid var(--navy-card-border);
@@ -336,7 +333,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .stat-card::before {
     content: '';
     position: absolute;
@@ -345,7 +342,7 @@
     background: var(--gold);
     border-radius: 0 0 2px 2px;
   }
-
+ 
   .stat-num {
     color: var(--gold);
     font-size: clamp(22px, 3vw, 42px);
@@ -353,7 +350,7 @@
     margin: 10% 0 5%;
     line-height: 1.1;
   }
-
+ 
   .stat-label {
     color: var(--white);
     font-size: clamp(11px, 1.3vw, 16px);
@@ -361,16 +358,16 @@
     margin-bottom: 8px;
     line-height: 1.4;
   }
-
+ 
   .stat-sub {
     color: var(--text-muted);
     font-size: clamp(10px, 1vw, 13px);
     line-height: 1.5;
   }
-
+ 
   /* ========= SLIDE 5: VIDEO ========= */
   .s5 { background: #111827; justify-content: center; align-items: center; padding: 4%; }
-
+ 
   .s5 .video-title {
     color: var(--white);
     font-size: clamp(22px, 2.8vw, 38px);
@@ -378,7 +375,7 @@
     text-align: center;
     margin-bottom: 4%;
   }
-
+ 
   .video-frame {
     width: 65%;
     max-width: 700px;
@@ -390,13 +387,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     cursor: pointer;
     transition: border-color 0.3s;
   }
-
+ 
   .video-frame:hover { border-color: var(--gold-light); }
-
+ 
   .play-btn {
     width: 80px;
     height: 80px;
@@ -410,13 +406,13 @@
     padding-right: 4px;
     margin-bottom: 16px;
   }
-
+ 
   .video-insert-label {
     color: #4B5563;
     font-size: clamp(11px, 1.2vw, 14px);
     font-style: italic;
   }
-
+ 
   .video-caption {
     color: var(--text-muted);
     font-size: clamp(11px, 1.1vw, 13px);
@@ -424,17 +420,17 @@
     text-align: center;
     margin-top: 3%;
   }
-
-  /* ========= SLIDE 6: INTERNATIONAL CUSTOMER ========= */
+ 
+  /* ========= SLIDE 6: IMPACT ========= */
   .s6 { background: var(--light-bg); }
-
+ 
   .s6 .slide-title {
     color: var(--navy);
     font-size: clamp(22px, 2.8vw, 36px);
     font-weight: 800;
     margin-bottom: 3%;
   }
-
+ 
   .highlight-box {
     background: #FEF3C7;
     border: 1px solid #FCD34D;
@@ -446,14 +442,14 @@
     margin-bottom: 3%;
     line-height: 1.5;
   }
-
+ 
   .impact-rows {
     display: flex;
     flex-direction: column;
     gap: 2%;
     flex: 1;
   }
-
+ 
   .impact-row {
     background: var(--white);
     border: 1px solid #E2E8F0;
@@ -465,30 +461,30 @@
     flex-direction: column;
     justify-content: center;
   }
-
+ 
   .impact-row .impact-title {
     color: var(--navy);
     font-size: clamp(12px, 1.4vw, 16px);
     font-weight: 800;
     margin-bottom: 5px;
   }
-
+ 
   .impact-row .impact-body {
     color: #4B5563;
     font-size: clamp(11px, 1.2vw, 14px);
     line-height: 1.5;
   }
-
+ 
   /* ========= SLIDE 7: CLOSING ========= */
   .s7 { background: var(--navy); justify-content: center; }
-
+ 
   .s7 .bottom-bar {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 6px;
     background: var(--gold);
   }
-
+ 
   .s7 .close-headline {
     color: var(--white);
     font-size: clamp(32px, 5vw, 66px);
@@ -496,14 +492,14 @@
     margin-bottom: 5%;
     line-height: 1.1;
   }
-
+ 
   .s7 .close-body {
     color: var(--ice);
     font-size: clamp(16px, 1.9vw, 24px);
     line-height: 1.7;
     margin-bottom: 8%;
   }
-
+ 
   .cta-btn {
     display: inline-block;
     background: var(--gold);
@@ -515,27 +511,26 @@
     text-align: center;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
-    align-self: flex-start;
-    margin-right: auto;
-    margin-left: auto;
+    align-self: center;
+    margin: 0 auto;
   }
-
+ 
   .cta-btn:hover {
     background: var(--gold-light);
     transform: translateY(-2px);
   }
-
+ 
   /* ========= ANIMATIONS ========= */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
+ 
   .slide.active .animate {
     animation: fadeUp 0.5s ease forwards;
     opacity: 0;
   }
-
+ 
   .slide.active .animate:nth-child(1) { animation-delay: 0.05s; }
   .slide.active .animate:nth-child(2) { animation-delay: 0.15s; }
   .slide.active .animate:nth-child(3) { animation-delay: 0.25s; }
@@ -545,9 +540,9 @@
 </style>
 </head>
 <body>
-
+ 
 <div class="presentation">
-
+ 
   <!-- ===== SLIDE 1: COVER ===== -->
   <div class="slide s1 active" id="slide-1">
     <div class="top-bar"></div>
@@ -555,23 +550,23 @@
       <span class="headline-gold">هل يجدك؟</span>
     </div>
     <div class="divider animate"></div>
-    <div class="subtitle animate">تقرير ميداني &nbsp;|&nbsp; مصرف أبو ظبي الإسلامي</div>
-    <div class="date animate">يونيو ٢٠٢٦</div>
+    <div class="subtitle animate">تقرير ميداني &nbsp;|&nbsp; مصرف ابو ظبي الاسلامي</div>
+    <div class="date animate">يونيو 2026</div>
   </div>
-
+ 
   <!-- ===== SLIDE 2: THE QUESTION ===== -->
   <div class="slide s2" id="slide-2">
-    <div class="eyebrow animate">سؤال واحد يستحق الإجابة</div>
+    <div class="eyebrow animate">سؤال واحد يستحق الاجابة</div>
     <div class="big-q animate">
-      <div>من ٧٥ موقعاً مختفياً</div>
+      <div>من 75 موقع مختفي</div>
       <div>في القاهرة وحدها —</div>
-      <div>كم عميلاً خسرتم هذا الشهر؟</div>
+      <div>كم عميل خسرتم هذا الشهر؟</div>
     </div>
     <div class="quote-box animate">
       العميل الذي لا يجدك على قوقل... يجد منافسك.
     </div>
   </div>
-
+ 
   <!-- ===== SLIDE 3: WHAT CUSTOMER SEES ===== -->
   <div class="slide s3" id="slide-3">
     <div class="slide-title animate">ما يراه عميلك عند البحث</div>
@@ -579,116 +574,114 @@
       <div class="card-bad">
         <div class="card-label">الواقع الحالي ✕</div>
         <div class="card-row">
-          <div class="query">Search: "ADIB ATM Cairo"</div>
-          <div class="result">٨٢ صراف في القاهرة — الغالبية غير مرئية</div>
+          <div class="query">Search: ADIB ATM Cairo</div>
+          <div class="result">82 صراف في القاهرة — الغالبية غير مرئية</div>
         </div>
         <div class="card-row">
-          <div class="query">Search: "فروع أبو ظبي الإسلامي القاهرة"</div>
-          <div class="result">٣٠ فرع في القاهرة — معظمها لا تظهر</div>
+          <div class="query">Search: فروع ابو ظبي الاسلامي القاهرة</div>
+          <div class="result">30 فرع في القاهرة — معظمها لا تظهر</div>
         </div>
         <div class="card-row">
-          <div class="query">Search: "صراف آلي قريب مني"</div>
-          <div class="result">المنافسون يظهرون — ٧٥ موقع ADIB مختفٍ</div>
+          <div class="query">Search: صراف آلي قريب مني</div>
+          <div class="result">المنافسون يظهرون — 75 موقع ADIB مختفي</div>
         </div>
       </div>
       <div class="card-good">
-        <div class="card-label">✓ ما يجب أن يكون</div>
+        <div class="card-label">✓ ما يجب ان يكون</div>
         <ul>
-          <li>الفروع تظهر فوراً بمعلومات دقيقة وكاملة</li>
-          <li>الصرافات الآلية مرئية على الخريطة</li>
+          <li>الفروع تظهر فورا بمعلومات دقيقة وكاملة</li>
+          <li>الصرافات الالية مرئية على الخريطة</li>
           <li>ساعات العمل والخدمات متاحة للعميل</li>
-          <li>العميل يصل إليكم بنقرة واحدة</li>
+          <li>العميل يصل اليكم بنقرة واحدة</li>
         </ul>
       </div>
     </div>
   </div>
-
+ 
   <!-- ===== SLIDE 4: FIELD DATA ===== -->
   <div class="slide s4" id="slide-4">
-    <div class="eyebrow animate">بحث ميداني موثّق بالصور والمقاطع</div>
+    <div class="eyebrow animate">بحث ميداني موثق بالصور والمقاطع</div>
     <div class="slide-title animate">ما كشف عنه البحث الميداني</div>
     <div class="stats-row animate">
       <div class="stat-card">
-        <div class="stat-num">٧٥<br><span style="font-size:55%">موقعاً</span></div>
-        <div class="stat-label">مختفٍ من قوقل في القاهرة وحدها</div>
-        <div class="stat-sub">من أصل ١١٢ موقعاً — ٣٠ فرع و٨٢ صراف آلي</div>
+        <div class="stat-num">75<br><span style="font-size:55%">موقع</span></div>
+        <div class="stat-label">مختفي من قوقل في القاهرة وحدها</div>
+        <div class="stat-sub">من اصل 112 موقع — 30 فرع و82 صراف الي</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">٦٧٪</div>
+        <div class="stat-num">67%</div>
         <div class="stat-label">من مواقع المصرف في القاهرة غير مرئية</div>
-        <div class="stat-sub">فقط ٣٧ موقعاً من ١١٢ يظهر على قوقل ماب</div>
+        <div class="stat-sub">فقط 37 موقع من 112 يظهر على قوقل ماب</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">٣٣٥<br><span style="font-size:55%">موقعاً</span></div>
-        <div class="stat-label">إجمالي مواقع المصرف في مصر</div>
-        <div class="stat-sub">٨٥ فرع + ٢٥٠ صراف آلي — معظمها في نفس الوضع</div>
+        <div class="stat-num">335<br><span style="font-size:55%">موقع</span></div>
+        <div class="stat-label">اجمالي مواقع المصرف في مصر</div>
+        <div class="stat-sub">85 فرع + 250 صراف الي — معظمها في نفس الوضع</div>
       </div>
     </div>
   </div>
-
+ 
   <!-- ===== SLIDE 5: VIDEO ===== -->
   <div class="slide s5" id="slide-5">
     <div class="video-title animate">شاهد ما يراه عميلك</div>
     <div class="video-frame animate">
-      <div class="play-btn">▶</div>
-      <div class="video-insert-label">[ أدرج الفيديو الميداني هنا ]</div>
+      <div class="play-btn">&#9654;</div>
+      <div class="video-insert-label">[ ادرج الفيديو الميداني هنا ]</div>
     </div>
     <div class="video-caption animate">
-      تصوير ميداني في أكثر من منطقة &nbsp;|&nbsp; بحث حقيقي بعيون عميل حقيقي
+      تصوير ميداني في اكثر من منطقة &nbsp;|&nbsp; بحث حقيقي بعيون عميل حقيقي
     </div>
   </div>
-
-  <!-- ===== SLIDE 6: INTERNATIONAL CUSTOMER ===== -->
+ 
+  <!-- ===== SLIDE 6: IMPACT ===== -->
   <div class="slide s6" id="slide-6">
-    <div class="slide-title animate">العميل الذي لا يُرى... لا يُخدَم</div>
+    <div class="slide-title animate">العميل الذي لا يرى... لا يخدم</div>
     <div class="highlight-box animate">
-      مصرف أبو ظبي الإسلامي — مصر: ٨٥ فرعاً، ٢٥٠ صرافاً آلياً، وحضور رقمي لا يعكس هذا الحجم. الرقم يُلزم بمستوى أعلى من الظهور.
+      مصرف ابو ظبي الاسلامي — مصر: 85 فرع، 250 صراف الي، وحضور رقمي لا يعكس هذا الحجم. الرقم يلزم بمستوى اعلى من الظهور.
     </div>
     <div class="impact-rows animate">
       <div class="impact-row">
-        <div class="impact-title">العميل الأجنبي يعتمد على قوقل بالكامل</div>
-        <div class="impact-body">أول خطوة عند وصوله: البحث عن البنك على هاتفه. إذا لم يجد الفرع أو الصراف، يذهب إلى منافس.</div>
+        <div class="impact-title">العميل الاجنبي يعتمد على قوقل بالكامل</div>
+        <div class="impact-body">اول خطوة عند وصوله: البحث عن البنك على هاتفه. اذا لم يجد الفرع او الصراف، يذهب الى منافس.</div>
       </div>
       <div class="impact-row">
         <div class="impact-title">صعوبة الوصول = خسارة فورية</div>
-        <div class="impact-body">بدون قوقل ماب، لا اتجاهات ولا زيارة. الاحتكاك الرقمي يُترجَم مباشرةً إلى خسارة عميل فعلية.</div>
+        <div class="impact-body">بدون قوقل ماب، لا اتجاهات ولا زيارة. الاحتكاك الرقمي يترجم مباشرة الى خسارة عميل فعلية.</div>
       </div>
       <div class="impact-row">
         <div class="impact-title">خسارة مركبة على المدى الطويل</div>
-        <div class="impact-body">العميل الذي لا يجدك اليوم قد يُمثّل عوائد شهرية متكررة طوال سنوات — والفرق بينكم وبين منافسكم نقرة واحدة على قوقل.</div>
+        <div class="impact-body">العميل الذي لا يجدك اليوم قد يمثل عوائد شهرية متكررة طوال سنوات — والفرق بينكم وبين منافسكم نقرة واحدة على قوقل.</div>
       </div>
     </div>
   </div>
-
+ 
   <!-- ===== SLIDE 7: CLOSING ===== -->
   <div class="slide s7" id="slide-7">
     <div class="bottom-bar"></div>
     <div class="close-headline animate">الفرصة لا تزال قائمة.</div>
     <div class="close-body animate">
-      البيانات التي جمعناها تُظهر فجوة واضحة<br>
+      البيانات التي جمعناها تظهر فجوة واضحة<br>
       بين حجم مصرفكم وحضوره الرقمي المحلي.<br>
       نرحب بمناقشتها معكم.
     </div>
-    <div class="cta-btn animate">نطلب لقاءً لمدة ٣٠ دقيقة</div>
+    <div class="cta-btn animate">نطلب لقاء لمدة 30 دقيقة</div>
   </div>
-
+ 
 </div>
-
-<!-- NAVIGATION -->
-<div class="hint">Press ← → or click arrows to navigate &nbsp;|&nbsp; F11 for fullscreen</div>
-
+ 
+<div class="hint">Press &larr; &rarr; to navigate &nbsp;|&nbsp; F for fullscreen</div>
+ 
 <div class="nav">
   <button id="btnPrev" onclick="changeSlide(-1)">&#8592;</button>
   <div class="dots" id="dots"></div>
   <div class="slide-counter" id="counter">1 / 7</div>
   <button id="btnNext" onclick="changeSlide(1)">&#8594;</button>
 </div>
-
+ 
 <script>
   const totalSlides = 7;
   let current = 1;
-
-  // Build dots
+ 
   const dotsEl = document.getElementById('dots');
   for (let i = 1; i <= totalSlides; i++) {
     const d = document.createElement('div');
@@ -696,24 +689,21 @@
     d.onclick = () => goTo(i);
     dotsEl.appendChild(d);
   }
-
+ 
   function goTo(n) {
     if (n < 1 || n > totalSlides || n === current) return;
-
     const prev = document.getElementById('slide-' + current);
     const next = document.getElementById('slide-' + n);
-
     prev.classList.remove('active');
     prev.classList.add('exit');
     setTimeout(() => prev.classList.remove('exit'), 500);
-
     next.classList.add('active');
     current = n;
     updateNav();
   }
-
+ 
   function changeSlide(dir) { goTo(current + dir); }
-
+ 
   function updateNav() {
     document.getElementById('counter').textContent = current + ' / ' + totalSlides;
     document.getElementById('btnPrev').disabled = current === 1;
@@ -722,7 +712,7 @@
       d.classList.toggle('active', i + 1 === current);
     });
   }
-
+ 
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
@@ -731,7 +721,7 @@
       else document.exitFullscreen();
     }
   });
-
+ 
   updateNav();
 </script>
 </body>
